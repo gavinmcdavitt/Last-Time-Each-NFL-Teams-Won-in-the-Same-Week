@@ -1,53 +1,3 @@
-/* RESULTS CONTAINER */
-#results {
-    margin-top: 50px;
-    color: #fff;
-    display: flex;                   /* make container a flexbox */
-    justify-content: center;         /* horizontal centering */
-    align-items: center;             /* vertical centering */
-    flex-direction: column;          /* stack week sections vertically */
-}
-
-/* RESULTS LIST */
-.win-details ul {
-    list-style: none;                /* remove bullets */
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
-    width: 100%;                     /* fill container horizontally */
-}
-
-/* EACH RESULT ITEM */
-.win-details li {
-    list-style: none;
-    display: flex;
-    align-items: center;             /* vertical center logo + text */
-    justify-content: flex-start;     /* keep logo left-aligned */
-    gap: 16px;
-    background: #222;
-    padding: 12px 16px;
-    border-radius: 10px;
-    font-size: 1.25rem;
-    line-height: 1.4;
-}
-
-/* LOGO */
-.win-details li img {
-    width: 64px !important;
-    height: 64px !important;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-/* TEXT */
-.win-details li strong {
-    font-size: 1.25rem;
-}
-
-
-
 /* GENERAL STYLES */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -111,10 +61,12 @@ p {
     color: #fff;
 }
 
+/* TEAMS GRID */
 .teams-horizontal {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
     gap: 70px;
+    justify-items: center; /* center logos */
 }
 
 .team-link {
@@ -133,7 +85,6 @@ p {
     height: 72px;
     object-fit: contain;
     display: block;
-    margin: 0 auto;
 }
 
 .team-link.selected {
@@ -175,6 +126,9 @@ button:hover {
 #results {
     margin-top: 50px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .week-section {
@@ -182,6 +136,7 @@ button:hover {
     padding: 30px;
     margin-bottom: 40px;
     border-radius: 12px;
+    width: 100%;
 }
 
 .week-section h2 {
@@ -192,15 +147,15 @@ button:hover {
 /* RESULTS LIST */
 .win-details ul {
     list-style: none;       /* remove bullets */
-    padding: 0;             /* remove UL padding */
-    margin: 0;              /* remove UL margin */
+    padding: 0;
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
 }
 
 .win-details li {
-    list-style: none;       /* remove LI bullets */
+    list-style: none;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -223,6 +178,8 @@ button:hover {
 }
 
 /* MEDIA QUERIES */
+
+/* Tablets */
 @media (max-width: 900px) {
     .afc-nfc-layout {
         flex-direction: column;
@@ -234,11 +191,12 @@ button:hover {
     }
 
     .teams-horizontal {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr); /* 2 per row for tablet */
         gap: 30px;
     }
 }
 
+/* Mobile phones */
 @media (max-width: 600px) {
     body {
         padding: 10px 0;
@@ -268,7 +226,8 @@ button:hover {
     }
 
     .teams-horizontal {
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
+        gap: 15px;
     }
 
     button {

@@ -159,7 +159,12 @@ document.getElementById('analyze-btn').addEventListener('click', async () => {
         matches.forEach(m => {
             const section = document.createElement('div');
             section.className = 'week-section';
-            section.innerHTML = `<h2>${m.season} Week ${m.week}</h2><ul></ul>`;
+            section.innerHTML = `
+            <h2>${m.season} Week ${m.week}</h2>
+            <div class="win-details">
+                <ul></ul>
+            </div>
+            `;
             const ul = section.querySelector('ul');
 
             const weekGames = games.filter(g =>

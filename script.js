@@ -10,6 +10,40 @@ const fullNameMap = {
     PIT: 'Pittsburgh Steelers', SEA: 'Seattle Seahawks', SF: 'San Francisco 49ers',
     TB: 'Tampa Bay Buccaneers', TEN: 'Tennessee Titans', WAS: 'Washington Commanders'
 };
+const teamLogos = {
+    ARI: 'Assets/nfl-arizona-cardinals-team-logo-2-300x300.png',
+    ATL: 'Assets/nfl-atlanta-falcons-team-logo-2-300x300.png',
+    BAL: 'Assets/nfl-baltimore-ravens-team-logo-2-300x300.png',
+    BUF: 'Assets/nfl-buffalo-bills-team-logo-2-300x300.png',
+    CAR: 'Assets/nfl-carolina-panthers-team-logo-2-300x300.png',
+    CHI: 'Assets/nfl-chicago-bears-team-logo-2-300x300.png',
+    CIN: 'Assets/nfl-cincinnati-bengals-team-logo-2-300x300.png',
+    CLE: 'Assets/nfl-cleveland-browns-team-logo-2-300x300.png',
+    DAL: 'Assets/nfl-dallas-cowboys-team-logo-2-300x300.png',
+    DEN: 'Assets/nfl-denver-broncos-team-logo-2-300x300.png',
+    DET: 'Assets/nfl-detroit-lions-team-logo-2-300x300.png',
+    GB: 'Assets/nfl-green-bay-packers-team-logo-2-300x300.png',
+    HOU: 'Assets/nfl-houston-texans-team-logo-2-300x300.png',
+    IND: 'Assets/nfl-indianapolis-colts-team-logo-2-300x300.png',
+    JAX: 'Assets/nfl-jacksonville-jaguars-team-logo-2-300x300.png',
+    KC: 'Assets/nfl-kansas-city-chiefs-team-logo-2-300x300.png',
+    LA: 'Assets/nfl-los-angeles-rams-team-logo-2-300x300.png',
+    LAC: 'Assets/nfl-los-angeles-chargers-team-logo-2-300x300.png',
+    LV: 'Assets/nfl-oakland-raiders-team-logo-2-300x300.png',
+    MIA: 'Assets/nfl-miami-dolphins-team-logo-2-300x300.png',
+    MIN: 'Assets/nfl-minnesota-vikings-team-logo-2-300x300.png',
+    NE: 'Assets/nfl-new-england-patriots-team-logo-2-300x300.png',
+    NO: 'Assets/nfl-new-orleans-saints-team-logo-2-300x300.png',
+    NYG: 'Assets/nfl-new-york-giants-team-logo-2-300x300.png',
+    NYJ: 'Assets/nfl-new-york-jets-team-logo-2-300x300.png',
+    PHI: 'Assets/nfl-philadelphia-eagles-team-logo-2-300x300.png',
+    PIT: 'Assets/nfl-pittsburgh-steelers-team-logo-2-300x300.png',
+    SEA: 'Assets/nfl-seattle-seahawks-team-logo-2-300x300.png',
+    SF: 'Assets/nfl-san-francisco-49ers-team-logo-2-300x300.png',
+    TB: 'Assets/nfl-tampa-bay-buccaneers-team-logo-2-300x300.png',
+    TEN: 'Assets/nfl-tennessee-titans-team-logo-2-300x300.png',
+    WAS: 'Assets/nfl-washington-commanders-team-logo-2-300x300.png'
+};
 
 const logoMap = {
     ARI: 'Assets/nfl-arizona-cardinals-team-logo-2-300x300.png',

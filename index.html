@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL All-Win Weeks Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NFL Teams That All Won in the Same Week</h1>
+        <p>Click team logos to select/deselect (selected logos get a bold blue highlight box). Select at least 2 teams.</p>
+
+        <div class="afc-nfc-layout">
+            <!-- AFC Side -->
+            <div class="conference afc">
+                <h2>AFC</h2>
+                <div class="division-row">
+                    <h3>East</h3>
+                    <div class="teams-horizontal">
+                        <a href="#" class="team-link" data-abbr="BUF"><img src="assets/nfl-buffalo-bills-team-logo-2-300x300.png" alt="Buffalo Bills"></a>
+                        <a href="#" class="team-link" data-abbr="MIA"><img src="assets/nfl-miami-dolphins-team-logo-2-300x300.png" alt="Miami Dolphins"></a>
+                        <a href="#" class="team-link" data-abbr="NE"><img src="assets/nfl-new-england-patriots-team-logo-2-300x300.png" alt="New England Patriots"></a>
+                        <a href="#" class="team-link" data-abbr="NYJ"><img src="assets/nfl-new-york-jets-team-logo-2-300x300.png" alt="New York Jets"></a>
+                    </div>
+                </div>
+                <div class="division-row">
+                    <h3>North</h3>
+                    <div class="teams-horizontal">
+                        <a href="#" class="team-link" data-abbr="BAL"><img src="assets/nfl-baltimore-ravens-team-logo-2-300x300.png" alt="Baltimore Ravens"></a>
+                        <a href="#" class="team-link" data-abbr="CIN"><img src="assets/nfl-cincinnati-bengals-team-logo-2-300x300.png" alt="Cincinnati Bengals"></a>
+                        <a href="#" class="team-link" data-abbr="CLE"><img src="assets/nfl-cleveland-browns-team-logo-2-300x300.png" alt="Cleveland Browns"></a>
+                        <a href="#" class="team-link" data-abbr="PIT"><img src="assets/nfl-pittsburgh-steelers-team-logo-2-300x300.png" alt="Pittsburgh Steelers"></a>
+                    </div>
+                </div>
+                <div class="division-row">
+                    <h3>South</h3>
+                    <div class="teams-horizontal">
+                        <a href="#" class="team-link" data-abbr="HOU"><img src="assets/nfl-houston-texans-team-logo-2-300x300.png" alt="Houston Texans"></a>
+                        <a href="#" class="team-link" data-abbr="IND"><img src="assets/nfl-indianapolis-colts-team-logo-2-300x300.png" alt="Indianapolis Colts"></a>
+                        <a href="#" class="team-link" data-abbr="JAX"><img src="assets/nfl-jacksonville-jaguars-team-logo-2-300x300.png" alt="Jacksonville Jaguars"></a>
+                        <a href="#" class="team-link" data-abbr="TEN"><img src="assets/nfl-tennessee-titans-team-logo-2-300x300.png" alt="Tennessee Titans"></a>
+                    </div>
+                </div>
+                <div class="division-row">
+                    <h3>West</h3>
+                    <div class="teams-horizontal">
+                        <a href="#" class="team-link" data-abbr="DEN"><img src="assets/nfl-denver-broncos-team-logo-2-300x300.png" alt="Denver Broncos"></a>
+                        <a href="#" class="team-link" data-abbr="KC"><img src="assets/nfl-kansas-city-chiefs-team-logo-2-300x300.png" alt="Kansas City Chiefs"></a>
+                        <a href="#" class="team-link" data-abbr="LAC"><img src="assets/nfl-los-angeles-chargers-team-logo-2-300x300.png" alt="Los Angeles Chargers"></a>
+                        <a href="#" class="team-link" data-abbr="LV"><img src="assets/nfl-oakland-raiders-team-logo-2-300x300.png" alt="Las Vegas Raiders"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NFC Side -->
+            <div class="conference nfc">
+                <h2>NFC</h2>
+                <div class="division-row">
+                    <h3>East</h3>
+                    <div class="teams-horizontal">
+                        <a href="#" class="team-link" data-abbr="DAL"><img src="assets/nfl-dallas-cowboys-team-logo-2-300x300.png" alt="Dallas Cowboys"></a>
+                        <a href="#" class="team-link" data-abbr="NYG"><img src="assets/nfl-new-york-giants-team-logo-2-300x300.png" alt="New York Giants"></a>
+                        <a href="#" class="team-link" data-abbr="PHI"><img src="assets/nfl-philadelphia-eagles-team-logo-2-300x300.png" alt="Philadelphia Eagles"></a>
+                        <a href="#" class="team-link" data-abbr="WAS"><img src="assets/nfl-washington-commanders-team-logo-2-300x300.png" alt="Washington Commanders"></a>
+                    </div>
+                </div>
+                <div class="division-row">
+                    <h3>North</h3>
+                    <div class="teams-horizontal">
+                        <a href="#" class="team-link" data-abbr="CHI"><img src="assets/nfl-chicago-bears-team-logo-2-300x300.png" alt="Chicago Bears"></a>
+                        <a href="#" class="team-link" data-abbr="DET"><img src="assets/nfl-detroit-lions-team-logo-2-300x300.png" alt="Detroit Lions"></a>
+                        <a href="#" class="team-link" data-abbr="GB"><img src="assets/nfl-green-bay-packers-team-logo-2-300x300.png" alt="Green Bay Packers"></a>
+                        <a href="#" class="team-link" data-abbr="MIN"><img src="assets/nfl-minnesota-vikings-team-logo-2-300x300.png" alt="Minnesota Vikings"></a>
+                    </div>
+                </div>
+                <div class="division-row">
+                    <h3>South</h3>
+                    <div class="teams-horizontal">
+                        <a href="#" class="team-link" data-abbr="ATL"><img src="assets/nfl-atlanta-falcons-team-logo-2-300x300.png" alt="Atlanta Falcons"></a>
+                        <a href="#" class="team-link" data-abbr="CAR"><img src="assets/nfl-carolina-panthers-team-logo-2-300x300.png" alt="Carolina Panthers"></a>
+                        <a href="#" class="team-link" data-abbr="NO"><img src="assets/nfl-new-orleans-saints-team-logo-2-300x300.png" alt="New Orleans Saints"></a>
+                        <a href="#" class="team-link" data-abbr="TB"><img src="assets/nfl-tampa-bay-buccaneers-team-logo-2-300x300.png" alt="Tampa Bay Buccaneers"></a>
+                    </div>
+                </div>
+                <div class="division-row">
+                    <h3>West</h3>
+                    <div class="teams-horizontal">
+                        <a href="#" class="team-link" data-abbr="ARI"><img src="assets/nfl-arizona-cardinals-team-logo-2-300x300.png" alt="Arizona Cardinals"></a>
+                        <a href="#" class="team-link" data-abbr="LA"><img src="assets/nfl-los-angeles-rams-team-logo-2-300x300.png" alt="Los Angeles Rams"></a>
+                        <a href="#" class="team-link" data-abbr="SEA"><img src="assets/nfl-seattle-seahawks-team-logo-2-300x300.png" alt="Seattle Seahawks"></a>
+                        <a href="#" class="team-link" data-abbr="SF"><img src="assets/nfl-san-francisco-49ers-team-logo-2-300x300.png" alt="San Francisco 49ers"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="analyze-btn">Find All-Win Weeks</button>
+
+        <div id="loading">Loading games.csv and analyzing... (this may take 5–15 seconds)</div>
+
+        <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

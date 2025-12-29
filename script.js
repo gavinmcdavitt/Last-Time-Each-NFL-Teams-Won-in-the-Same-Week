@@ -157,61 +157,63 @@ document.getElementById('analyze-btn').addEventListener('click', async () => {
         }
 
         matches.forEach(m => {
-            const section = document.createElement('div');
-            section.className = 'week-section';
-            section.innerHTML = `
-            <h2>${m.season} Week ${m.week}</h2>
-            <div class="win-details">
-                <ul></ul>
-            </div>
+    const section = document.createElement('div');
+    section.className = 'week-section';
+    section.innerHTML = `
+        <h2>${m.season} Week ${m.week}</h2>
+        <div class="win-details">
+            <ul style="list-style: none; padding: 0; margin: 0;"></ul>
+        </div>
+    `;
+
+    const ul = section.querySelector('ul');
+
+    const weekGames = games.filter(g =>
+        parseInt(g.season) === m.season && parseInt(g.week) === m.week &&
+        (target.has(g.home_team) || target.has(g.away_team))
+    );
+
+    weekGames.forEach(g => {
+        const hs = parseFloat(g.home_score) || 0;
+        const as = parseFloat(g.away_score) || 0;
+        let winner, loser, score, oppScore, loc;
+
+        if (hs > as) {
+            winner = g.home_team;
+            loser = g.away_team;
+            score = hs;
+            oppScore = as;
+            loc = 'home';
+        } else if (as > hs) {
+            winner = g.away_team;
+            loser = g.home_team;
+            score = as;
+            oppScore = hs;
+            loc = 'away';
+        } else return;
+
+        if (target.has(winner)) {
+            const name = fullNameMap[winner] || winner;
+            const logo = logoMap[winner];
+            const li = document.createElement('li');
+            li.style.listStyle = 'none'; // ensure no bullet
+            li.innerHTML = `
+                <img 
+                    src="${logo}" 
+                    alt="${name}" 
+                    width="64" 
+                    height="64"
+                    style="width:64px;height:64px;object-fit:contain;"
+                >
+                <strong>${name} (${winner})</strong> defeated ${loser} ${score}-${oppScore} (${loc})
             `;
-            const ul = section.querySelector('ul');
+            ul.appendChild(li);
+        }
+    });
 
-            const weekGames = games.filter(g =>
-                parseInt(g.season) === m.season && parseInt(g.week) === m.week &&
-                (target.has(g.home_team) || target.has(g.away_team))
-            );
+    results.appendChild(section);
+});
 
-            weekGames.forEach(g => {
-                const hs = parseFloat(g.home_score) || 0;
-                const as = parseFloat(g.away_score) || 0;
-                let winner, loser, score, oppScore, loc;
-
-                if (hs > as) {
-                    winner = g.home_team;
-                    loser = g.away_team;
-                    score = hs;
-                    oppScore = as;
-                    loc = 'home';
-                } else if (as > hs) {
-                    winner = g.away_team;
-                    loser = g.home_team;
-                    score = as;
-                    oppScore = hs;
-                    loc = 'away';
-                } else return;
-
-                if (target.has(winner)) {
-                    const name = fullNameMap[winner] || winner;
-                    const logo = logoMap[winner];
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-    <img 
-        src="${logo}" 
-        alt="${name}" 
-        width="64" 
-        height="64"
-        style="width:64px;height:64px;object-fit:contain;"
-    >
-    <strong>${name} (${winner})</strong> defeated ${loser} ${score}-${oppScore} (${loc})
-`;
-
-                    ul.appendChild(li);
-                }
-            });
-
-            results.appendChild(section);
-        });
 
     } catch (e) {
         loading.style.display = 'none';
